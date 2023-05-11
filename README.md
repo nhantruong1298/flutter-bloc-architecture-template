@@ -16,3 +16,11 @@
 
 ## Code generator for assets, fonts, and colors:
 - Using the package [flutter_gen](https://pub.dev/packages/flutter_gen)
+
+## VS Code extensions used in the project:
+- https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc
+- https://marketplace.visualstudio.com/items?itemName=GaetSchwartz.build-runner
+- https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl
+
+## Script:
+- To clean and get new data from PubDev for each layer, simply type "./project clean && ./project get"

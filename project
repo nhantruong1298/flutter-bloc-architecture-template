@@ -1,0 +1,83 @@
+#!/bin/bash
+#### ALL FUNCTIONS
+# validatedModule = 0
+
+runScript(){
+    cd $appDir"/app" && echoInfo "Execute commands in App" && executeCommands     
+    cd $appDir"/core" && echoInfo  "Execute commands in Core" && executeCommands 
+    cd $appDir"/core/presentation" && echoInfo "Execute commands in Presentation" && executeCommands
+    cd $appDir"/core/data" && echoInfo "Execute commands in Data" && executeCommands
+    cd $appDir"/core/domain" && echoInfo "Execute commands in Domain" && executeCommands
+}
+
+executeCommands(){
+  for command in "${commands[@]}"; do
+    if [ $command == "gen" ]; then
+      executeGenerate
+    fi
+    if [ $command == "get" ]; then
+      executeGetPackages
+    fi
+      if [ $command == "clean" ]; then
+      executeCleanPackages
+    fi
+      if [ $command == "upgrade" ]; then
+      executeUpgradePackages
+    fi
+  
+  done
+}
+
+executeGenerate(){
+  echoCommandInfo "AUTO GENERATED CLASS"
+  flutter packages pub run build_runner build --delete-conflicting-outputs
+}
+
+executeGetPackages(){
+  echoCommandInfo "AUTO GET PACKAGES"
+  flutter pub get
+}
+
+executeCleanPackages() {
+  echoCommandInfo "AUTO CLEAN PACKAGES"
+  flutter clean
+}
+
+
+executeUpgradePackages() {
+  echoCommandInfo "AUTO UPGRADE PACKAGES"
+  flutter pub upgrade
+}
+
+echoInfo(){
+  c_echo "GREEN"  "=====>  $1"
+}
+
+echoCommandInfo(){
+  c_echo "YELLOW"  "==========>  $1"
+}
+
+echoError(){
+  c_echo "RED"  "=====> ERROR:  $1  <====="
+}
+
+c_echo(){
+    bold=$(tput bold)
+    RED="\033[0;31m"
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    NC='\033[0m' # No Color
+    printf "${!1}${bold}${2} ${NC}\n"
+}
+
+clear
+appDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+commands=( "$@" )
+commandsLength=${#commands[@]}
+if [ $commandsLength -eq 0 ]; then
+  echoError "You need to enter one or more command names, name should be: format/generate"
+  exit 1
+fi
+
+runScript

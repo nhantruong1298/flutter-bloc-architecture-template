@@ -20,7 +20,7 @@ mixin _$SampleState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName) userNameUpdated,
     required TResult Function(dynamic exception) exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SampleState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName)? userNameUpdated,
     TResult? Function(dynamic exception)? exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SampleState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName)? userNameUpdated,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) =>
@@ -45,7 +45,7 @@ mixin _$SampleState {
   TResult map<TResult extends Object?>({
     required TResult Function(SampleInitial value) init,
     required TResult Function(LoadingState value) loading,
-    required TResult Function(SampleLoadedState value) loaded,
+    required TResult Function(UserNameUpdatedState value) userNameUpdated,
     required TResult Function(SampleExceptionState value) exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ mixin _$SampleState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SampleInitial value)? init,
     TResult? Function(LoadingState value)? loading,
-    TResult? Function(SampleLoadedState value)? loaded,
+    TResult? Function(UserNameUpdatedState value)? userNameUpdated,
     TResult? Function(SampleExceptionState value)? exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ mixin _$SampleState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SampleInitial value)? init,
     TResult Function(LoadingState value)? loading,
-    TResult Function(SampleLoadedState value)? loaded,
+    TResult Function(UserNameUpdatedState value)? userNameUpdated,
     TResult Function(SampleExceptionState value)? exception,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$SampleInitial implements SampleInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName) userNameUpdated,
     required TResult Function(dynamic exception) exception,
   }) {
     return init();
@@ -137,7 +137,7 @@ class _$SampleInitial implements SampleInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName)? userNameUpdated,
     TResult? Function(dynamic exception)? exception,
   }) {
     return init?.call();
@@ -148,7 +148,7 @@ class _$SampleInitial implements SampleInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName)? userNameUpdated,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
@@ -163,7 +163,7 @@ class _$SampleInitial implements SampleInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(SampleInitial value) init,
     required TResult Function(LoadingState value) loading,
-    required TResult Function(SampleLoadedState value) loaded,
+    required TResult Function(UserNameUpdatedState value) userNameUpdated,
     required TResult Function(SampleExceptionState value) exception,
   }) {
     return init(this);
@@ -174,7 +174,7 @@ class _$SampleInitial implements SampleInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SampleInitial value)? init,
     TResult? Function(LoadingState value)? loading,
-    TResult? Function(SampleLoadedState value)? loaded,
+    TResult? Function(UserNameUpdatedState value)? userNameUpdated,
     TResult? Function(SampleExceptionState value)? exception,
   }) {
     return init?.call(this);
@@ -185,7 +185,7 @@ class _$SampleInitial implements SampleInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SampleInitial value)? init,
     TResult Function(LoadingState value)? loading,
-    TResult Function(SampleLoadedState value)? loaded,
+    TResult Function(UserNameUpdatedState value)? userNameUpdated,
     TResult Function(SampleExceptionState value)? exception,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingState implements LoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName) userNameUpdated,
     required TResult Function(dynamic exception) exception,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingState implements LoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName)? userNameUpdated,
     TResult? Function(dynamic exception)? exception,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingState implements LoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName)? userNameUpdated,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
@@ -277,7 +277,7 @@ class _$LoadingState implements LoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(SampleInitial value) init,
     required TResult Function(LoadingState value) loading,
-    required TResult Function(SampleLoadedState value) loaded,
+    required TResult Function(UserNameUpdatedState value) userNameUpdated,
     required TResult Function(SampleExceptionState value) exception,
   }) {
     return loading(this);
@@ -288,7 +288,7 @@ class _$LoadingState implements LoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SampleInitial value)? init,
     TResult? Function(LoadingState value)? loading,
-    TResult? Function(SampleLoadedState value)? loaded,
+    TResult? Function(UserNameUpdatedState value)? userNameUpdated,
     TResult? Function(SampleExceptionState value)? exception,
   }) {
     return loading?.call(this);
@@ -299,7 +299,7 @@ class _$LoadingState implements LoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SampleInitial value)? init,
     TResult Function(LoadingState value)? loading,
-    TResult Function(SampleLoadedState value)? loaded,
+    TResult Function(UserNameUpdatedState value)? userNameUpdated,
     TResult Function(SampleExceptionState value)? exception,
     required TResult orElse(),
   }) {
@@ -315,20 +315,20 @@ abstract class LoadingState implements SampleState {
 }
 
 /// @nodoc
-abstract class _$$SampleLoadedStateCopyWith<$Res> {
-  factory _$$SampleLoadedStateCopyWith(
-          _$SampleLoadedState value, $Res Function(_$SampleLoadedState) then) =
-      __$$SampleLoadedStateCopyWithImpl<$Res>;
+abstract class _$$UserNameUpdatedStateCopyWith<$Res> {
+  factory _$$UserNameUpdatedStateCopyWith(_$UserNameUpdatedState value,
+          $Res Function(_$UserNameUpdatedState) then) =
+      __$$UserNameUpdatedStateCopyWithImpl<$Res>;
   @useResult
   $Res call({String userName});
 }
 
 /// @nodoc
-class __$$SampleLoadedStateCopyWithImpl<$Res>
-    extends _$SampleStateCopyWithImpl<$Res, _$SampleLoadedState>
-    implements _$$SampleLoadedStateCopyWith<$Res> {
-  __$$SampleLoadedStateCopyWithImpl(
-      _$SampleLoadedState _value, $Res Function(_$SampleLoadedState) _then)
+class __$$UserNameUpdatedStateCopyWithImpl<$Res>
+    extends _$SampleStateCopyWithImpl<$Res, _$UserNameUpdatedState>
+    implements _$$UserNameUpdatedStateCopyWith<$Res> {
+  __$$UserNameUpdatedStateCopyWithImpl(_$UserNameUpdatedState _value,
+      $Res Function(_$UserNameUpdatedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -336,7 +336,7 @@ class __$$SampleLoadedStateCopyWithImpl<$Res>
   $Res call({
     Object? userName = null,
   }) {
-    return _then(_$SampleLoadedState(
+    return _then(_$UserNameUpdatedState(
       null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
@@ -347,22 +347,22 @@ class __$$SampleLoadedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SampleLoadedState implements SampleLoadedState {
-  const _$SampleLoadedState(this.userName);
+class _$UserNameUpdatedState implements UserNameUpdatedState {
+  const _$UserNameUpdatedState(this.userName);
 
   @override
   final String userName;
 
   @override
   String toString() {
-    return 'SampleState.loaded(userName: $userName)';
+    return 'SampleState.userNameUpdated(userName: $userName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SampleLoadedState &&
+            other is _$UserNameUpdatedState &&
             (identical(other.userName, userName) ||
                 other.userName == userName));
   }
@@ -373,18 +373,19 @@ class _$SampleLoadedState implements SampleLoadedState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SampleLoadedStateCopyWith<_$SampleLoadedState> get copyWith =>
-      __$$SampleLoadedStateCopyWithImpl<_$SampleLoadedState>(this, _$identity);
+  _$$UserNameUpdatedStateCopyWith<_$UserNameUpdatedState> get copyWith =>
+      __$$UserNameUpdatedStateCopyWithImpl<_$UserNameUpdatedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName) userNameUpdated,
     required TResult Function(dynamic exception) exception,
   }) {
-    return loaded(userName);
+    return userNameUpdated(userName);
   }
 
   @override
@@ -392,10 +393,10 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName)? userNameUpdated,
     TResult? Function(dynamic exception)? exception,
   }) {
-    return loaded?.call(userName);
+    return userNameUpdated?.call(userName);
   }
 
   @override
@@ -403,12 +404,12 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName)? userNameUpdated,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(userName);
+    if (userNameUpdated != null) {
+      return userNameUpdated(userName);
     }
     return orElse();
   }
@@ -418,10 +419,10 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult map<TResult extends Object?>({
     required TResult Function(SampleInitial value) init,
     required TResult Function(LoadingState value) loading,
-    required TResult Function(SampleLoadedState value) loaded,
+    required TResult Function(UserNameUpdatedState value) userNameUpdated,
     required TResult Function(SampleExceptionState value) exception,
   }) {
-    return loaded(this);
+    return userNameUpdated(this);
   }
 
   @override
@@ -429,10 +430,10 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SampleInitial value)? init,
     TResult? Function(LoadingState value)? loading,
-    TResult? Function(SampleLoadedState value)? loaded,
+    TResult? Function(UserNameUpdatedState value)? userNameUpdated,
     TResult? Function(SampleExceptionState value)? exception,
   }) {
-    return loaded?.call(this);
+    return userNameUpdated?.call(this);
   }
 
   @override
@@ -440,23 +441,24 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SampleInitial value)? init,
     TResult Function(LoadingState value)? loading,
-    TResult Function(SampleLoadedState value)? loaded,
+    TResult Function(UserNameUpdatedState value)? userNameUpdated,
     TResult Function(SampleExceptionState value)? exception,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(this);
+    if (userNameUpdated != null) {
+      return userNameUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class SampleLoadedState implements SampleState {
-  const factory SampleLoadedState(final String userName) = _$SampleLoadedState;
+abstract class UserNameUpdatedState implements SampleState {
+  const factory UserNameUpdatedState(final String userName) =
+      _$UserNameUpdatedState;
 
   String get userName;
   @JsonKey(ignore: true)
-  _$$SampleLoadedStateCopyWith<_$SampleLoadedState> get copyWith =>
+  _$$UserNameUpdatedStateCopyWith<_$UserNameUpdatedState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -528,7 +530,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName) userNameUpdated,
     required TResult Function(dynamic exception) exception,
   }) {
     return exception(this.exception);
@@ -539,7 +541,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName)? userNameUpdated,
     TResult? Function(dynamic exception)? exception,
   }) {
     return exception?.call(this.exception);
@@ -550,7 +552,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName)? userNameUpdated,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
@@ -565,7 +567,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult map<TResult extends Object?>({
     required TResult Function(SampleInitial value) init,
     required TResult Function(LoadingState value) loading,
-    required TResult Function(SampleLoadedState value) loaded,
+    required TResult Function(UserNameUpdatedState value) userNameUpdated,
     required TResult Function(SampleExceptionState value) exception,
   }) {
     return exception(this);
@@ -576,7 +578,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SampleInitial value)? init,
     TResult? Function(LoadingState value)? loading,
-    TResult? Function(SampleLoadedState value)? loaded,
+    TResult? Function(UserNameUpdatedState value)? userNameUpdated,
     TResult? Function(SampleExceptionState value)? exception,
   }) {
     return exception?.call(this);
@@ -587,7 +589,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SampleInitial value)? init,
     TResult Function(LoadingState value)? loading,
-    TResult Function(SampleLoadedState value)? loaded,
+    TResult Function(UserNameUpdatedState value)? userNameUpdated,
     TResult Function(SampleExceptionState value)? exception,
     required TResult orElse(),
   }) {

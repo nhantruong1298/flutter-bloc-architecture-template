@@ -41,7 +41,7 @@ class _SampleScreenState extends BaseScreenState<SampleScreen> {
   Widget _buildGreeting() {
     return BlocBuilder<SampleCubit, SampleState>(
       builder: (context, state) {
-        if (state is SampleLoadedState) {
+        if (state is UserNameUpdatedState) {
           return Text('${S.current.HELLO} ${state.userName}');
         }
 

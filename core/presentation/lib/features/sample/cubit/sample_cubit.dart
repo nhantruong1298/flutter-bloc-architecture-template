@@ -8,6 +8,6 @@ class SampleCubit extends Cubit<SampleState> {
   SampleCubit() : super(const SampleInitial());
 
   void onUserNameChanged(String userName) {
-    emit(SampleLoadedState(userName));
+    emit(UserNameUpdatedState(userName));
   }
 }

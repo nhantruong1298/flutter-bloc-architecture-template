@@ -20,7 +20,7 @@ mixin _$SampleState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(dynamic result) loaded,
+    required TResult Function(String userName) loaded,
     required TResult Function(dynamic exception) exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SampleState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(dynamic result)? loaded,
+    TResult? Function(String userName)? loaded,
     TResult? Function(dynamic exception)? exception,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SampleState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(dynamic result)? loaded,
+    TResult Function(String userName)? loaded,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$SampleInitial implements SampleInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(dynamic result) loaded,
+    required TResult Function(String userName) loaded,
     required TResult Function(dynamic exception) exception,
   }) {
     return init();
@@ -137,7 +137,7 @@ class _$SampleInitial implements SampleInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(dynamic result)? loaded,
+    TResult? Function(String userName)? loaded,
     TResult? Function(dynamic exception)? exception,
   }) {
     return init?.call();
@@ -148,7 +148,7 @@ class _$SampleInitial implements SampleInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(dynamic result)? loaded,
+    TResult Function(String userName)? loaded,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingState implements LoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(dynamic result) loaded,
+    required TResult Function(String userName) loaded,
     required TResult Function(dynamic exception) exception,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingState implements LoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(dynamic result)? loaded,
+    TResult? Function(String userName)? loaded,
     TResult? Function(dynamic exception)? exception,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingState implements LoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(dynamic result)? loaded,
+    TResult Function(String userName)? loaded,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
@@ -320,7 +320,7 @@ abstract class _$$SampleLoadedStateCopyWith<$Res> {
           _$SampleLoadedState value, $Res Function(_$SampleLoadedState) then) =
       __$$SampleLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({dynamic result});
+  $Res call({String userName});
 }
 
 /// @nodoc
@@ -334,13 +334,13 @@ class __$$SampleLoadedStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? userName = null,
   }) {
     return _then(_$SampleLoadedState(
-      freezed == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+      null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -348,14 +348,14 @@ class __$$SampleLoadedStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SampleLoadedState implements SampleLoadedState {
-  const _$SampleLoadedState(this.result);
+  const _$SampleLoadedState(this.userName);
 
   @override
-  final dynamic result;
+  final String userName;
 
   @override
   String toString() {
-    return 'SampleState.loaded(result: $result)';
+    return 'SampleState.loaded(userName: $userName)';
   }
 
   @override
@@ -363,12 +363,12 @@ class _$SampleLoadedState implements SampleLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SampleLoadedState &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.userName, userName) ||
+                other.userName == userName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, userName);
 
   @JsonKey(ignore: true)
   @override
@@ -381,10 +381,10 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(dynamic result) loaded,
+    required TResult Function(String userName) loaded,
     required TResult Function(dynamic exception) exception,
   }) {
-    return loaded(result);
+    return loaded(userName);
   }
 
   @override
@@ -392,10 +392,10 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(dynamic result)? loaded,
+    TResult? Function(String userName)? loaded,
     TResult? Function(dynamic exception)? exception,
   }) {
-    return loaded?.call(result);
+    return loaded?.call(userName);
   }
 
   @override
@@ -403,12 +403,12 @@ class _$SampleLoadedState implements SampleLoadedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(dynamic result)? loaded,
+    TResult Function(String userName)? loaded,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(result);
+      return loaded(userName);
     }
     return orElse();
   }
@@ -452,9 +452,9 @@ class _$SampleLoadedState implements SampleLoadedState {
 }
 
 abstract class SampleLoadedState implements SampleState {
-  const factory SampleLoadedState(final dynamic result) = _$SampleLoadedState;
+  const factory SampleLoadedState(final String userName) = _$SampleLoadedState;
 
-  dynamic get result;
+  String get userName;
   @JsonKey(ignore: true)
   _$$SampleLoadedStateCopyWith<_$SampleLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -528,7 +528,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(dynamic result) loaded,
+    required TResult Function(String userName) loaded,
     required TResult Function(dynamic exception) exception,
   }) {
     return exception(this.exception);
@@ -539,7 +539,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(dynamic result)? loaded,
+    TResult? Function(String userName)? loaded,
     TResult? Function(dynamic exception)? exception,
   }) {
     return exception?.call(this.exception);
@@ -550,7 +550,7 @@ class _$SampleExceptionState implements SampleExceptionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(dynamic result)? loaded,
+    TResult Function(String userName)? loaded,
     TResult Function(dynamic exception)? exception,
     required TResult orElse(),
   }) {

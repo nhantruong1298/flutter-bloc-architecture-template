@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:presentation/app/route_builder.dart';
-import 'package:presentation/features/sample/cubit/sample_cubit.dart';
 import 'package:presentation/generated/l10n.dart';
 
 class Application extends StatefulWidget {
@@ -29,25 +27,21 @@ class _ApplicationState extends State<Application> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => SampleCubit()),
-        ],
-        child: MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          routerConfig: RouteBuilder.router,
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale('en'), // English
-            Locale('vi'), // Vietnamese
-          ],
-          localeResolutionCallback: _localeResolutionCallback,
-        ));
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: RouteBuilder.router,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('vi'), // Vietnamese
+      ],
+      localeResolutionCallback: _localeResolutionCallback,
+    );
   }
 
   Locale? _localeResolutionCallback(

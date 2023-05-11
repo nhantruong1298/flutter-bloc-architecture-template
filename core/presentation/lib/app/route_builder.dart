@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:presentation/features/sample/cubit/sample_cubit.dart';
 import 'package:presentation/features/sample/views/sample_screen.dart';
 
 part 'route_builder.g.dart';
@@ -24,7 +26,6 @@ class RouteBuilder {
 // For details setting go router builder , see
 // https://pub.dev/packages/go_router_builder
 
-
 //********************** Settings code gen here **********************
 //********************** SAMPLE ROUTE **********************
 @TypedGoRoute<SampleRoute>(
@@ -32,6 +33,10 @@ class RouteBuilder {
 )
 class SampleRoute extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const SampleScreen();
+  Widget build(BuildContext context, GoRouterState state) {
+    return BlocProvider(
+      create: (_) => SampleCubit(),
+      child: const SampleScreen(),
+    );
+  }
 }

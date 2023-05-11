@@ -1,1 +1,1 @@
-# flutter-cubit-template
+# Flutter Cubit Template

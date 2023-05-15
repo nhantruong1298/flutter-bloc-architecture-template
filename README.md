@@ -23,4 +23,4 @@
 - https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl
 
 ## Script:
-- To clean and get new data from PubDev for each layer, simply type "./project clean && ./project get"
+- To clean and get new data from PubDev for each layer, open terminal and type "./project clean && ./project get"

@@ -11,6 +11,9 @@
 ## State management:
 - Using the packages [flutter_bloc](https://pub.dev/packages/flutter_bloc) and [freezed](https://pub.dev/packages/freezed)
 
+## HTTP packages:
+- Using the packages [dio](https://pub.dev/packages/dio) and [retrofit](https://pub.dev/packages/retrofit)
+
 ## Internationalizing:
 - Using the package [intl](https://pub.dev/packages/intl)
 

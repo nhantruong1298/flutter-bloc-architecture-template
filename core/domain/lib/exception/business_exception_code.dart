@@ -1,0 +1,6 @@
+enum BusinessExceptionCode {
+  UNEXPECTED_ERROR,
+  REQUEST_TIME_OUT,
+  NETWORK_ERROR,
+  UNAUTHORIZED,
+}

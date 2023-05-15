@@ -1,0 +1,7 @@
+class SampleResult{
+  
+}
+
+class SampleParams{
+  
+}

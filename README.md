@@ -20,6 +20,9 @@
 ## Code generator for assets, fonts, and colors:
 - Using the package [flutter_gen](https://pub.dev/packages/flutter_gen)
 
+## Service Locator:
+- Using the package [get_it](https://pub.dev/packages/get_it)
+
 ## VS Code extensions used in the project:
 - https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc
 - https://marketplace.visualstudio.com/items?itemName=GaetSchwartz.build-runner
